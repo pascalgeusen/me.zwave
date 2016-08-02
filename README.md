@@ -15,7 +15,6 @@ Currently supported languages:
 Additional information:
 * Icons generated using: http://picsvg.com/
 * Original source is com.fibaro project (https://github.com/athombv/com.fibaro)
-* Currently contains no settings for any of the devices
 
 Changelog:
 0.0.1
