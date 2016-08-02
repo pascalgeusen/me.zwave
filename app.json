@@ -8,7 +8,7 @@
 	"description" : {
 		"en" : "Z-Wave.Me devices for Homey",
 		"nl" : "Z-Wave.Me apparaten voor Homey",
-		"de" : "Z-Wave.Me Geräte für Homey"
+		"de" : "Z-Wave.Me GerÃ¤te fÃ¼r Homey"
 	},
 	"category" : ["lights"],
 	"images" : {
@@ -17,7 +17,7 @@
 	},
 	"author" : {
 		"name" : "Icarus",
-		"email" : "non@yourbusiness.org"
+		"email" : "msuylen@gmail.com"
 	},
 	"drivers" : [{
 			"id" : "054336Z",
@@ -35,7 +35,7 @@
 					"instruction" : {
 						"en" : "Press the on or off button of the dimmer three times",
 						"nl" : "Druk driemaal op de aan of uit knop op de dimmer",
-						"de" : "Drücken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
+						"de" : "DrÃ¼cken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
 					}
 				},
 				"associationGroups" : [3]
@@ -86,7 +86,7 @@
 							"label" : {
 								"en" : "Operated by Indicator Command Class",
 								"nl" : "Uitgevoerd door Indicator Command klasse",
-								"de" : "Durchgeführt von Indicator Befehlsklasse"
+								"de" : "DurchgefÃ¼hrt von Indicator Befehlsklasse"
 							}
 						}
 					]
@@ -153,7 +153,7 @@
 					"hint" : {
 						"en" : "Defines if the dimmer shall ignore start level in StartLevelChange command despite it is specified or not.",
 						"nl" : "Definieert of de dimmer het start niveau zal negeren bij het uitvoeren van het command StartLevelChange onafhankelijk of deze ingesteld is of niet.",
-						"de" : "Legt fest, ob der Dimmer den StartLevelChange einstellung ignorieren soll unabhängig davon ob er eingesteld ist oder nicht."
+						"de" : "Legt fest, ob der Dimmer den StartLevelChange einstellung ignorieren soll unabhÃ¤ngig davon ob er eingesteld ist oder nicht."
 					},
 					"values" : [{
 							"id" : "0",
@@ -183,7 +183,7 @@
 					"hint" : {
 						"en" : "Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.",
 						"nl" : "Tijd om te dimmen bij het drukken van de knop. Indien 0 (en geen instelling ingesteld, zal het dimmen soepel uitgevoerd worden om de levensduur van de lamp te behouden.",
-						"de" : "Zeit beim Drücken der Taste zu dimmen. Wenn 0 (kein wert eingesteld), verdunkelt es glatt, um die Lebensdauer der Lampe zu erhalten."
+						"de" : "Zeit beim DrÃ¼cken der Taste zu dimmen. Wenn 0 (kein wert eingesteld), verdunkelt es glatt, um die Lebensdauer der Lampe zu erhalten."
 					}
 				}, {
 					"id" : "dimming_long_speed",
@@ -197,7 +197,7 @@
 					"hint" : {
 						"en" : "Time to dim on button holds and StartLevelChange command (if it has no duration specified).",
 						"nl" : "Tijd om te dimmen bij het ingedrukt houden van de knop en bij het StartLevelCange command (indien er geen duur gespecificeerd is).",
-						"de" : "Zeit zu dimmen, wenn die Taste gedrückt bleibt und wenn StartLevelCange Befehl (wenn keine Zeit festgelegt ist)."
+						"de" : "Zeit zu dimmen, wenn die Taste gedrÃ¼ckt bleibt und wenn StartLevelCange Befehl (wenn keine Zeit festgelegt ist)."
 					}
 				}, {
 					"id" : "max_light_level_on_click",
@@ -205,13 +205,13 @@
 					"label" : {
 						"en" : "Set maximum light level on On click",
 						"nl" : "Zet maximum licht niveau bij inschakelen",
-						"de" : "Setzt die maximale Lichtstärke bei einschalten"
+						"de" : "Setzt die maximale LichtstÃ¤rke bei einschalten"
 					},
 					"value" : "0",
 					"hint" : {
 						"en" : "Defines if the dimmer shall set maximum light level on On command. By default on On command dimmer restores last level.",
 						"nl" : "Definieerd of de dimmer de maximum licht sterkte bij inschakelen moet gebruiken. Standaard wordt bij On actie het laatste niveau hersteld.",
-						"de" : "Legt fest, ob der Dimmer maximale Lichtstärke auf On-Befehl gesetzt wird. In der Standardeinstellung wird die letzte einstellung Wiederhergesteld."
+						"de" : "Legt fest, ob der Dimmer maximale LichtstÃ¤rke auf On-Befehl gesetzt wird. In der Standardeinstellung wird die letzte einstellung Wiederhergesteld."
 					},
 					"values" : [{
 							"id" : "0",
@@ -248,7 +248,7 @@
 					"hint" : {
 						"en" : "Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action. If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands.",
 						"nl" : "Tijd om te dimmen bij een dubbel druk actie op de uit nop voor de baby dim functie. Deze functie werkt enkel indien er met een enkele klik en het tijdelijk vasthouden van de knop ingeschakeld is. Indien ingeschakeld wacht het apparaat voor een klik tijd om te zien of de knop nogmaals gedrukt wordt. Hierdoor ontstaat een tijdelijke vertraging.",
-						"de" : "Zeit bei einen Doppelklick auf Aus-Taste für Baby Dim Funktion. Diese Funktion funktioniert nur, wenn die letzte durch einmaliges Drücken in betrieb genomen ist und wen die taste gehalten ist. Wenn diese Option aktiviert wird, wird das Gerät für einen Klick Timeout warten, um zu sehen, ob der zweite Klick gedrückt würde. Dies wird eine kleine Verzögerung für Klick-Befehle einführen."
+						"de" : "Zeit bei einen Doppelklick auf Aus-Taste fÃ¼r Baby Dim Funktion. Diese Funktion funktioniert nur, wenn die letzte durch einmaliges DrÃ¼cken in betrieb genomen ist und wen die taste gehalten ist. Wenn diese Option aktiviert wird, wird das GerÃ¤t fÃ¼r einen Klick Timeout warten, um zu sehen, ob der zweite Klick gedrÃ¼ckt wÃ¼rde. Dies wird eine kleine VerzÃ¶gerung fÃ¼r Klick-Befehle einfÃ¼hren."
 					}
 				}, {
 					"id" : "target_dimming_level",
@@ -256,13 +256,13 @@
 					"label" : {
 						"en" : "Target dimming level for Baby Dimming",
 						"nl" : "Doel dim level voor baby dim",
-						"de" : "Ziel Dimmlevels für Baby-Dimming"
+						"de" : "Ziel Dimmlevels fÃ¼r Baby-Dimming"
 					},
 					"value" : 0,
 					"hint" : {
 						"en" : "Target level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.",
 						"nl" : "Doel level waarbij gestopt wordt bij het uitvoeren van de baby dim functie. Kan 0 zijn om het licht volledig uit te schakelen.",
-						"de" : "Zielebene, auf dem zu stoppen, während Baby-Dimming ausführt wird. Kann 0 sein wobei das Licht vollständig auszuschalted wird."
+						"de" : "Zielebene, auf dem zu stoppen, wÃ¤hrend Baby-Dimming ausfÃ¼hrt wird. Kann 0 sein wobei das Licht vollstÃ¤ndig auszuschalted wird."
 					}
 				}, {
 					"id" : "click_timeout",
@@ -320,7 +320,7 @@
 					"hint" : {
 						"en" : "If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.",
 						"nl" : "Indien uigeschakeld, wordt de lokale operatie van de knoppen niet meer gebruikt voor het aansturen van de aangesloten apparaten, maar wordt enkel een Aan/Uit gestuurd aan de verbonden Association-groups. In deze modus zijn de knoppen niet meer gekoppeld aan de schakelaar. Deze kunnen seperaat gebruikt worden: knoppen voor het schakelen van een ander apparaat, schakelaar wordt aangestuurd via RF commandos.",
-						"de" : "Wenn deaktiviert, schalten die lokalen Operationen durch Tasten nicht die Last, sondern nur Befehle Ein- / Aus-schalten an die Association-Gruppe. In diesem Modus sind die Tasten nicht meht mit dem Schalter verbunden. Sie können separat verwendet werden: Tasten zum steuern von andere geräte, Schalter wird durch RF Befehlt."
+						"de" : "Wenn deaktiviert, schalten die lokalen Operationen durch Tasten nicht die Last, sondern nur Befehle Ein- / Aus-schalten an die Association-Gruppe. In diesem Modus sind die Tasten nicht meht mit dem Schalter verbunden. Sie kÃ¶nnen separat verwendet werden: Tasten zum steuern von andere gerÃ¤te, Schalter wird durch RF Befehlt."
 					},
 					"values" : [{
 							"id" : "0",
@@ -334,14 +334,14 @@
 							"label" : {
 								"en" : "By single press and hold",
 								"nl" : "Bij enkel drukken en houden",
-								"de" : "Durch einfaches Drücken und halten"
+								"de" : "Durch einfaches DrÃ¼cken und halten"
 							}
 						}, {
 							"id" : "2",
 							"label" : {
 								"en" : "By double press and press-hold",
 								"nl" : "Bij dubbel drukken en houden",
-								"de" : "Durch doppeltes Drücken und halten"
+								"de" : "Durch doppeltes DrÃ¼cken und halten"
 							}
 						}
 					]
@@ -351,13 +351,13 @@
 					"label" : {
 						"en" : "Action on button single press or hold",
 						"nl" : "Aktie bij enkele druk en houden van de knop",
-						"de" : "Aktion mit Einzel drücken und halten derr Taste"
+						"de" : "Aktion mit Einzel drÃ¼cken und halten derr Taste"
 					},
 					"value" : "1",
 					"hint" : {
 						"en" : "Defines which command should be sent on button single press or hold. Basic commands are sent to Association group. Switch All commands are sent broadcast.",
 						"nl" : "Definieerd welke opdrachten verzonden moeten worden bij enkel drukken en houden. Basis commando's worden verzonden aan Association group. Switch All commandos worden hierbij verzonden.",
-						"de" : "Legt fest, welche befehlen auf die Schaltfläche Einzel drücken oder halten gesendet werden. Basic-Befehle werden zu den Assoziationsgruppe gesendet. Switch All Befehle werden gesendet."
+						"de" : "Legt fest, welche befehlen auf die SchaltflÃ¤che Einzel drÃ¼cken oder halten gesendet werden. Basic-Befehle werden zu den Assoziationsgruppe gesendet. Switch All Befehle werden gesendet."
 					},
 					"values" : [{
 							"id" : "0",
@@ -388,20 +388,20 @@
 					"label" : {
 						"en" : "Action on button double press or hold",
 						"nl" : "Aktie bij dubbel druk en houden van de knop",
-						"de" : "Aktion mit doppel drücken und halten derr Taste"
+						"de" : "Aktion mit doppel drÃ¼cken und halten derr Taste"
 					},
 					"value" : "0",
 					"hint" : {
 						"en" : "Defines which command should be sent on button double press or press-hold. Basic commands are sent to Association group. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands.",
 						"nl" : "Definieerd welke opdrachten verzonden moeten worden bij dubbel drukken en houden. Basis commando's worden verzonden aan Association group. Switch All commandos worden hierbij verzonden. Indien niet uitgeschakeld wacht het apparaat foor een dubbel klick timeout om te controleren dat er geen tweede klick wordt uitgevoerd. Dit introduceert een kleine vertraging.",
-						"de" : "Legt fest, welche befehlen auf die Schaltfläche Einzel drücken oder halten gesendet werden. Basic-Befehle werden zu den Assoziationsgruppe gesendet. Switch All Befehle werden gesendet. Wenn nicht ausgeschalted warted das geräht auf einen Doppelklick Timeout zodass es keine zweite mall gedrükt wird. Dies zorgt vur eine kleine Verzögerung."
+						"de" : "Legt fest, welche befehlen auf die SchaltflÃ¤che Einzel drÃ¼cken oder halten gesendet werden. Basic-Befehle werden zu den Assoziationsgruppe gesendet. Switch All Befehle werden gesendet. Wenn nicht ausgeschalted warted das gerÃ¤ht auf einen Doppelklick Timeout zodass es keine zweite mall gedrÃ¼kt wird. Dies zorgt vur eine kleine VerzÃ¶gerung."
 					},
 					"values" : [{
 							"id" : "0",
 							"label" : {
 								"en" : "Disabled (don't wait for double click)",
 								"nl" : "Uitgeschakeld (wacht niet voor dubbel klik)",
-								"de" : "Deaktiviert (warten Sie nicht für Doppelklick)"
+								"de" : "Deaktiviert (warten Sie nicht fÃ¼r Doppelklick)"
 							}
 						}, {
 							"id" : "1",
