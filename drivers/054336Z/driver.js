@@ -14,18 +14,13 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				'command_set' : 'SWITCH_MULTILEVEL_SET',
 				'command_set_parser' : function (value) {
 					return {
-						'Value' : (value > 0) ? 'on/enable' : 'off/disable',
+						'Value' : value ? 'on/enable' : 'off/disable',
 						'Dimming Duration' : 1
 					}
 				},
 				'command_report' : 'SWITCH_MULTILEVEL_REPORT',
 				'command_report_parser' : function (report) {
-					if (typeof report['Value'] === 'string') {
-						return report['Value'] === 'on/enable';
-					} else {
-						return report['Value (Raw)'][0] > 0;
-					}
-
+					return report['Value (Raw)'][0] > 0;
 				}
 			},
 			'dim' : {
@@ -34,17 +29,13 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				'command_set' : 'SWITCH_MULTILEVEL_SET',
 				'command_set_parser' : function (value) {
 					return {
-						'Value' : value * 100,
+						'Value' : Math.min(value * 100, 99),
 						'Dimming Duration' : 1
 					}
 				},
 				'command_report' : 'SWITCH_MULTILEVEL_REPORT',
 				'command_report_parser' : function (report) {
-					if (typeof report['Value'] === 'string') {
-						return (report['Value'] === 'on/enable') ? 1.0 : 0.0;
-					} else {
-						return report['Value (Raw)'][0] / 100;
-					}
+					return report['Value (Raw)'][0] / 100;
 				}
 			}
 		},
