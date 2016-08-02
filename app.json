@@ -1,0 +1,52 @@
+	{
+    "id": "me.zwave",
+    "name": {
+        "en": "Z-Wave.Me"
+    },
+    "version": "0.0.1",
+    "compatibility": ">=0.9.0",
+    "description": {
+	    "en": "Z-Wave.Me devices for Homey",
+		"nl": "Z-Wave.Me apparaten voor Homey",
+		"de": "Z-Wave.Me Geräte für Homey"
+    },
+    "category": [ "lights" ],
+    "images": {
+	    "large": "/assets/images/large.png",
+	    "small": "/assets/images/small.png"
+    },
+    "author": {
+        "name": "Icarus",
+        "email": "non@yourbusiness.org"
+    },
+	"drivers": [
+	    {
+		    "id": "054336Z",
+		    "name": {
+			    "en": "Z-Wave.Me Dimmer",
+				"nl": "Z-Wave.Me Dimmer",
+				"de": "Z-Wave.Me Dimmer"
+		    },
+		    "zwave": {
+			    "manufacturerId": 277,
+			    "productTypeId": 4096,
+			    "productId": 2,
+			    "learnmode": {
+				    "image": "/drivers/054336Z/assets/learnmode.svg",
+				    "instruction": {
+					    "en": "Press the on or off button of the dimmer three times",
+					    "nl": "Druk driemaal op de aan of uit knop op de dimmer",
+						"de": "Drücken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
+				    }
+				},
+			    "associationGroups": [ 3 ]
+		    },
+		    "class": "light",
+		    "capabilities": [ "onoff", "dim"],
+		    "images": {
+			    "large": "/drivers/054336Z/assets/images/large.png",
+			    "small": "/drivers/054336Z/assets/images/small.png"
+		    }
+	    }
+    ]
+}
