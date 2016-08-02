@@ -2,7 +2,7 @@
 
 This app adds support for Z-Wave.Me devices to Homey.
 
-Note! I created this app to add support for one of my devices. I don't have any intention to give any support to this app! God bless open source software.
+Note! I created this app to add support for one of my devices. Feel free to change it as you please because I don't have any intention to give any support to this app! God bless open source software!
 
 Currently supported devices:
 * 054336Z - http://www.pepper1.net/zwavedb/device/145
