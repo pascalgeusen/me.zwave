@@ -19,6 +19,14 @@
 		"name" : "Icarus",
 		"email" : "msuylen@gmail.com"
 	},
+	"contributors" : {
+	    "developers" : [
+		    {
+			    "name" : "Bart Kockx",
+			    "email" : "bkockx@gmail.com"
+		    }
+		]
+	},
 	"drivers" : [{
 			"id" : "054336Z",
 			"name" : {
