@@ -17,6 +17,7 @@ Additional information:
 * Original source is com.fibaro project (https://github.com/athombv/com.fibaro)
 
 Changelog:
+
 0.0.2
 * Replaced a couple of icons, fixed a slider issue and removed the tinycolor2 package (since it's not used)
 
