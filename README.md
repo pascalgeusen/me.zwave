@@ -13,7 +13,7 @@ Currently supported languages:
 * Germany (Deutsch)
 
 Additional information:
-* Icons generated using: http://picsvg.com/
+* Icons generated using: http://www.mobilefish.com/services/image2svg/image2svg.php
 * Original source is com.fibaro project (https://github.com/athombv/com.fibaro)
 
 Changelog:
