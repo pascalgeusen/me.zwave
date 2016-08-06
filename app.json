@@ -30,9 +30,9 @@
 	"drivers" : [{
 			"id" : "054336Z",
 			"name" : {
-				"en" : "Z-Wave.Me Dimmer",
-				"nl" : "Z-Wave.Me Dimmer",
-				"de" : "Z-Wave.Me Dimmer"
+				"en" : "Z-Wave.Me dimmer - 054336Z",
+				"nl" : "Z-Wave.Me dimmer - 054336Z",
+				"de" : "Z-Wave.Me dimmer - 054336Z"
 			},
 			"zwave" : {
 				"manufacturerId" : 277,
