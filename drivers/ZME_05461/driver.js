@@ -22,28 +22,25 @@ module.exports = new ZwaveDriver( path.basename(__dirname), {
 					command_class			: "COMMAND_CLASS_SWITCH_BINARY",
 					command_report			: 'SWITCH_BINARY_REPORT',
 					command_report_parser	: report => {
-						Homey.log('[ZME DEBUG] report:', report);
-						if( typeof report['Value'] === 'string' ) {
-							var state_on = false;
-
-							Homey.log('[ZME DEBUG] Value:', report['Value'])
-
-							if (report['Value'] === 'on/enable') {
-								state_on = true;
-								Homey.log('[ZME DEBUG] state_on:', state_on);
-							} else {
-								state_on = false;
-								Homey.log('[ZME DEBUG] state_on:', state_on);
-							}
-
-							return state_on;
-						} else {
-							Homey.log('[ZME DEBUG] Value != string, using -> Value (Raw) [0]:', report['Value (Raw)'][0])
-							return report['Value (Raw)'][0] > 0;
-						}
+						return report['Value'] === 'on/enable';
 					}
 				}
-		]
+		]/*,
+		measure_power: {
+			command_class: 'COMMAND_CLASS_METER',
+			command_get: 'METER_GET',
+			command_get_parser: () => {
+				return {
+					'Sensor Type': 'Electric meter',
+					'Properties1': {
+						'Rate Type': 0,
+						'Scale': 2
+					}
+				}
+			},
+			command_report: 'METER_REPORT',
+			command_report_parser: report => report['Meter Value (Parsed)']
+		}*/
 	},
 	settings: {
 		"switch_first_channel_off_after": {

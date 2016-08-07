@@ -59,8 +59,8 @@
 		{
 		    "id": "ZME_05461",
 		    "name": {
-			    "en": "Z-Wave.Me Channel 1",
-				"nl": "Z-Wave.Me Kanaal 1"
+			    "en": "Z-Wave.Me Dual load switch",
+				"nl": "Z-Wave.Me dubbele schakelaar"
 		    },
 		    "class": "light",
 		    "capabilities": [ "onoff" ],
@@ -103,13 +103,22 @@
 					}
 				],
 				"multiChannelNodes": {
+					"1": {
+					    "class": "light",
+					    "capabilities": [ "onoff" ],
+					    "icon": "/drivers/ZME_05461/assets/channel1.svg",
+					    "name": {
+						    "en": "Switch channel 1",
+							"nl": "Schakelaar kanaal 1"
+						}
+				    },
 				    "2": {
 					    "class": "light",
 					    "capabilities": [ "onoff" ],
 					    "icon": "/drivers/ZME_05461/assets/channel2.svg",
 					    "name": {
-						    "en": "Z-Wave.Me channel 2",
-							"nl": "Z-Wave.Me Kanaal 2"
+						    "en": "Switch channel 2",
+							"nl": "Schakelaar kanaal 2"
 						}
 				    }
 				}
