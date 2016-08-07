@@ -1,52 +1,471 @@
-	{
-    "id": "me.zwave",
-    "name": {
-        "en": "Z-Wave.Me"
-    },
-    "version": "0.0.1",
-    "compatibility": ">=0.9.0",
-    "description": {
-	    "en": "Z-Wave.Me devices for Homey",
-		"nl": "Z-Wave.Me apparaten voor Homey",
-		"de": "Z-Wave.Me Ger�te f�r Homey"
-    },
-    "category": [ "lights" ],
-    "images": {
-	    "large": "/assets/images/large.png",
-	    "small": "/assets/images/small.png"
-    },
-    "author": {
-        "name": "Icarus",
-        "email": "non@yourbusiness.org"
-    },
-	"drivers": [
-	    {
-		    "id": "054336Z",
-		    "name": {
-			    "en": "Z-Wave.Me Dimmer",
-				"nl": "Z-Wave.Me Dimmer",
-				"de": "Z-Wave.Me Dimmer"
-		    },
-		    "zwave": {
-			    "manufacturerId": 277,
-			    "productTypeId": 4096,
-			    "productId": 2,
-			    "learnmode": {
-				    "image": "/drivers/054336Z/assets/learnmode.svg",
-				    "instruction": {
-					    "en": "Press the on or off button of the dimmer three times",
-					    "nl": "Druk driemaal op de aan of uit knop op de dimmer",
-						"de": "Dr�cken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
-				    }
-				},
-			    "associationGroups": [ 3 ]
-		    },
-		    "class": "light",
-		    "capabilities": [ "onoff", "dim"],
-		    "images": {
-			    "large": "/drivers/054336Z/assets/images/large.png",
-			    "small": "/drivers/054336Z/assets/images/small.png"
+{
+	"id" : "me.zwave",
+	"name" : {
+		"en" : "Z-Wave.Me"
+	},
+	"version" : "0.0.2",
+	"compatibility" : ">=0.9.0",
+	"description" : {
+		"en" : "Z-Wave.Me devices for Homey",
+		"nl" : "Z-Wave.Me apparaten voor Homey",
+		"de" : "Z-Wave.Me Geräte für Homey"
+	},
+	"category" : ["lights"],
+	"images" : {
+		"large" : "/assets/images/large.png",
+		"small" : "/assets/images/small.png"
+	},
+	"author" : {
+		"name" : "Icarus",
+		"email" : "msuylen@gmail.com"
+	},
+	"contributors" : {
+	    "developers" : [
+		    {
+			    "name" : "Bart Kockx",
+			    "email" : "bkockx@gmail.com"
 		    }
-	    }
-    ]
+		]
+	},
+	"drivers" : [{
+			"id" : "054336Z",
+			"name" : {
+				"en" : "Z-Wave.Me dimmer - 054336Z",
+				"nl" : "Z-Wave.Me dimmer - 054336Z",
+				"de" : "Z-Wave.Me dimmer - 054336Z"
+			},
+			"zwave" : {
+				"manufacturerId" : 277,
+				"productTypeId" : 4096,
+				"productId" : 2,
+				"learnmode" : {
+					"image" : "/drivers/054336Z/assets/learnmode.svg",
+					"instruction" : {
+						"en" : "Press the on or off button of the dimmer three times",
+						"nl" : "Druk driemaal op de aan of uit knop op de dimmer",
+						"de" : "Drücken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
+					}
+				},
+				"associationGroups" : [3]
+			},
+			"class" : "light",
+			"capabilities" : ["onoff", "dim"],
+			"images" : {
+				"large" : "/drivers/054336Z/assets/images/large.png",
+				"small" : "/drivers/054336Z/assets/images/small.png"
+			},
+			"settings" : [{
+					"id" : "led_mode",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "LED Mode",
+						"nl" : "LED-modus",
+						"de" : "LED-Modus"
+					},
+					"value" : "3",
+					"hint" : {
+						"en" : "Set LED indication mode",
+						"nl" : "Zet LED indicatie modus",
+						"de" : "LED einstellungen modus setzen"
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "Disabled",
+								"nl" : "Uitgeschakeld",
+								"de" : "Ausgeschaltet"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "Show switch state",
+								"nl" : "Gebruik schakelaar stand",
+								"de" : "Benutze Shalterstand"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "Night mode (inverted switch state)",
+								"nl" : "Nach modus (wissel schakelaar stand)",
+								"de" : "Nachtbetrieb (wechsel-Schaltzustand)"
+							}
+						}, {
+							"id" : "3",
+							"label" : {
+								"en" : "Operated by Indicator Command Class",
+								"nl" : "Uitgevoerd door Indicator Command klasse",
+								"de" : "Durchgeführt von Indicator Befehlsklasse"
+							}
+						}
+					]
+				}, {
+					"id" : "auto_off",
+					"type" : "number",
+					"label" : {
+						"en" : "Automatically switch off after",
+						"nl" : "Schakel automatisch uit na",
+						"de" : "Automatisches Ausschalten nach"
+					},
+					"value" : 0,
+					"hint" : {
+						"en" : "If not zero, automatically switch off after a user defined time",
+						"nl" : "Als niet nul is, automatisch uitgeschakeld na een door de gebruiker gedefinieerde tijd",
+						"de" : "Wenn nicht Null ist, schaltet automatisch nach einer bestimmten Zeit aus"
+					}
+				}, {
+					"id" : "rf_off_command",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "What to do on RF off command",
+						"nl" : "Wat te doen op RF-uit commando",
+						"de" : "Was auf RF aus-Befehl zu tun"
+					},
+					"value" : "0",
+					"hint" : {
+						"en" : "Defines how to interpret RF Off command.",
+						"nl" : "Definieert hoe het RF uit commando te interpreteren is.",
+						"de" : "Legt fest, wie RF-Aus-Befehl zu interpretieren."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "Switch off",
+								"nl" : "Uischakeld",
+								"de" : "Ausschalten"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "Ignore",
+								"nl" : "Negeren",
+								"de" : "Ignorieren"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "Switch on",
+								"nl" : "Inschakelen",
+								"de" : "Einschalten"
+							}
+						}
+					]
+				}, {
+					"id" : "start_level",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Ignore start level",
+						"nl" : "Negeer start level",
+						"de" : "Ignoriere begin stand"
+					},
+					"value" : "1",
+					"hint" : {
+						"en" : "Defines if the dimmer shall ignore start level in StartLevelChange command despite it is specified or not.",
+						"nl" : "Definieert of de dimmer het start niveau zal negeren bij het uitvoeren van het command StartLevelChange onafhankelijk of deze ingesteld is of niet.",
+						"de" : "Legt fest, ob der Dimmer den StartLevelChange einstellung ignorieren soll unabhängig davon ob er eingesteld ist oder nicht."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "No",
+								"nl" : "Nee",
+								"de" : "Nein"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "Yes",
+								"nl" : "Ja",
+								"de" : "Ja"
+							}
+						}
+					]
+				}, {
+					"id" : "dimming_speed",
+					"type" : "number",
+					"label" : {
+						"en" : "Dimming speed",
+						"nl" : "Dim snelheid",
+						"de" : "Dimmgeschwindigkeit"
+					},
+					"value" : 30,
+					"hint" : {
+						"en" : "Time to dim on button presses and Set command (if it has no duration specified). If not 0, dimming will be done smoothly to preserv bulb life.",
+						"nl" : "Tijd om te dimmen bij het drukken van de knop. Indien 0 (en geen instelling ingesteld, zal het dimmen soepel uitgevoerd worden om de levensduur van de lamp te behouden.",
+						"de" : "Zeit beim Drücken der Taste zu dimmen. Wenn 0 (kein wert eingesteld), verdunkelt es glatt, um die Lebensdauer der Lampe zu erhalten."
+					}
+				}, {
+					"id" : "dimming_long_speed",
+					"type" : "number",
+					"label" : {
+						"en" : "Dimming long speed",
+						"nl" : "Dim lange snelheid",
+						"de" : "Dim niedriger Geschwindigkeit"
+					},
+					"value" : 3,
+					"hint" : {
+						"en" : "Time to dim on button holds and StartLevelChange command (if it has no duration specified).",
+						"nl" : "Tijd om te dimmen bij het ingedrukt houden van de knop en bij het StartLevelCange command (indien er geen duur gespecificeerd is).",
+						"de" : "Zeit zu dimmen, wenn die Taste gedrückt bleibt und wenn StartLevelCange Befehl (wenn keine Zeit festgelegt ist)."
+					}
+				}, {
+					"id" : "max_light_level_on_click",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Set maximum light level on On click",
+						"nl" : "Zet maximum licht niveau bij inschakelen",
+						"de" : "Setzt die maximale Lichtstärke bei einschalten"
+					},
+					"value" : "0",
+					"hint" : {
+						"en" : "Defines if the dimmer shall set maximum light level on On command. By default on On command dimmer restores last level.",
+						"nl" : "Definieerd of de dimmer de maximum licht sterkte bij inschakelen moet gebruiken. Standaard wordt bij On actie het laatste niveau hersteld.",
+						"de" : "Legt fest, ob der Dimmer maximale Lichtstärke auf On-Befehl gesetzt wird. In der Standardeinstellung wird die letzte einstellung Wiederhergesteld."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "No",
+								"nl" : "Nee",
+								"de" : "Nein"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "If already On",
+								"nl" : "Indien reeds ingeschakeld",
+								"de" : "Wenn bereits eingeschalted"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "Always",
+								"nl" : "Altijd",
+								"de" : "Immer"
+							}
+						}
+					]
+				}, {
+					"id" : "baby_dimming_time",
+					"type" : "number",
+					"label" : {
+						"en" : "Baby Dimming time",
+						"nl" : "Baby dim tijd",
+						"de" : "Baby-Abdimmzeit"
+					},
+					"value" : 0,
+					"hint" : {
+						"en" : "Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action. If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands.",
+						"nl" : "Tijd om te dimmen bij een dubbel druk actie op de uit nop voor de baby dim functie. Deze functie werkt enkel indien er met een enkele klik en het tijdelijk vasthouden van de knop ingeschakeld is. Indien ingeschakeld wacht het apparaat voor een klik tijd om te zien of de knop nogmaals gedrukt wordt. Hierdoor ontstaat een tijdelijke vertraging.",
+						"de" : "Zeit bei einen Doppelklick auf Aus-Taste für Baby Dim Funktion. Diese Funktion funktioniert nur, wenn die letzte durch einmaliges Drücken in betrieb genomen ist und wen die taste gehalten ist. Wenn diese Option aktiviert wird, wird das Gerät für einen Klick Timeout warten, um zu sehen, ob der zweite Klick gedrückt würde. Dies wird eine kleine Verzögerung für Klick-Befehle einführen."
+					}
+				}, {
+					"id" : "target_dimming_level",
+					"type" : "number",
+					"label" : {
+						"en" : "Target dimming level for Baby Dimming",
+						"nl" : "Doel dim level voor baby dim",
+						"de" : "Ziel Dimmlevels für Baby-Dimming"
+					},
+					"value" : 0,
+					"hint" : {
+						"en" : "Target level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.",
+						"nl" : "Doel level waarbij gestopt wordt bij het uitvoeren van de baby dim functie. Kan 0 zijn om het licht volledig uit te schakelen.",
+						"de" : "Zielebene, auf dem zu stoppen, während Baby-Dimming ausführt wird. Kann 0 sein wobei das Licht vollständig auszuschalted wird."
+					}
+				}, {
+					"id" : "click_timeout",
+					"type" : "number",
+					"label" : {
+						"en" : "Typical click timeout",
+						"nl" : "Standaard klik timeout",
+						"de" : "Typische Klick Timeout"
+					},
+					"value" : 50,
+					"hint" : {
+						"en" : "Typical time used to differenciate click, hold, double and triple clicks.",
+						"nl" : "Standaard tijd gebruikt om een onderscheid te maken tussen klick, houden, dubbel klick en trippel klik.",
+						"de" : "Typische Zeit verwendet fur Klick zum unterscheiden von Klick, halten, doppel Klicks und dreifache Klicks."
+					}
+				}, {
+					"id" : "invert_buttons",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Invert buttons",
+						"nl" : "Wissel knoppen",
+						"de" : "Wechsel taste"
+					},
+					"value" : "0",
+					"hint" : {
+						"en" : "Invert the on and off button.",
+						"nl" : "Wissel de aan en uitknoppen.",
+						"de" : "Wechsel die Ein- und Aus-Taste."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "No",
+								"nl" : "Nee",
+								"de" : "Nein"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "Yes",
+								"nl" : "Ja",
+								"de" : "Ja"
+							}
+						}
+					]
+				}, {
+					"id" : "switch_by_buttons",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Switch by buttons",
+						"nl" : "Wissel met knop",
+						"de" : "Wechseln mit der Tasten"
+					},
+					"value" : "1",
+					"hint" : {
+						"en" : "If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.",
+						"nl" : "Indien uigeschakeld, wordt de lokale operatie van de knoppen niet meer gebruikt voor het aansturen van de aangesloten apparaten, maar wordt enkel een Aan/Uit gestuurd aan de verbonden Association-groups. In deze modus zijn de knoppen niet meer gekoppeld aan de schakelaar. Deze kunnen seperaat gebruikt worden: knoppen voor het schakelen van een ander apparaat, schakelaar wordt aangestuurd via RF commandos.",
+						"de" : "Wenn deaktiviert, schalten die lokalen Operationen durch Tasten nicht die Last, sondern nur Befehle Ein- / Aus-schalten an die Association-Gruppe. In diesem Modus sind die Tasten nicht meht mit dem Schalter verbunden. Sie können separat verwendet werden: Tasten zum steuern von andere geräte, Schalter wird durch RF Befehlt."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "No",
+								"nl" : "Nee",
+								"de" : "Nein"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "By single press and hold",
+								"nl" : "Bij enkel drukken en houden",
+								"de" : "Durch einfaches Drücken und halten"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "By double press and press-hold",
+								"nl" : "Bij dubbel drukken en houden",
+								"de" : "Durch doppeltes Drücken und halten"
+							}
+						}
+					]
+				}, {
+					"id" : "action_on_single_press_or_hold",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Action on button single press or hold",
+						"nl" : "Aktie bij enkele druk en houden van de knop",
+						"de" : "Aktion mit Einzel drücken und halten derr Taste"
+					},
+					"value" : "1",
+					"hint" : {
+						"en" : "Defines which command should be sent on button single press or hold. Basic commands are sent to Association group. Switch All commands are sent broadcast.",
+						"nl" : "Definieerd welke opdrachten verzonden moeten worden bij enkel drukken en houden. Basis commando's worden verzonden aan Association group. Switch All commandos worden hierbij verzonden.",
+						"de" : "Legt fest, welche befehlen auf die Schaltfläche Einzel drücken oder halten gesendet werden. Basic-Befehle werden zu den Assoziationsgruppe gesendet. Switch All Befehle werden gesendet."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "Disabled",
+								"nl" : "Uitgeschakeld",
+								"de" : "Ausgeschaltet"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "Switch On, Off and dim using Basic Set",
+								"nl" : "Schakel aan, uit en dim met behulp van Basic Set",
+								"de" : "Schalten Ein, Aus und Dimmen mit Basic Set"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "Switch All",
+								"nl" : "Schakel allen",
+								"de" : "Schalte alle"
+							}
+						}
+					]
+				}, {
+					"id" : "action_on_double_press_or_hold",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Action on button double press or hold",
+						"nl" : "Aktie bij dubbel druk en houden van de knop",
+						"de" : "Aktion mit doppel drücken und halten derr Taste"
+					},
+					"value" : "0",
+					"hint" : {
+						"en" : "Defines which command should be sent on button double press or press-hold. Basic commands are sent to Association group. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands.",
+						"nl" : "Definieerd welke opdrachten verzonden moeten worden bij dubbel drukken en houden. Basis commando's worden verzonden aan Association group. Switch All commandos worden hierbij verzonden. Indien niet uitgeschakeld wacht het apparaat foor een dubbel klick timeout om te controleren dat er geen tweede klick wordt uitgevoerd. Dit introduceert een kleine vertraging.",
+						"de" : "Legt fest, welche befehlen auf die Schaltfläche Einzel drücken oder halten gesendet werden. Basic-Befehle werden zu den Assoziationsgruppe gesendet. Switch All Befehle werden gesendet. Wenn nicht ausgeschalted warted das geräht auf einen Doppelklick Timeout zodass es keine zweite mall gedrükt wird. Dies zorgt vur eine kleine Verzögerung."
+					},
+					"values" : [{
+							"id" : "0",
+							"label" : {
+								"en" : "Disabled (don't wait for double click)",
+								"nl" : "Uitgeschakeld (wacht niet voor dubbel klik)",
+								"de" : "Deaktiviert (warten Sie nicht für Doppelklick)"
+							}
+						}, {
+							"id" : "1",
+							"label" : {
+								"en" : "Switch On, Off and dim using Basic Set",
+								"nl" : "Schakel aan, uit en dim met behulp van Basic Set",
+								"de" : "Schalten Ein, Aus und Dimmen mit Basic Set"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "Switch All",
+								"nl" : "Schakel allen",
+								"de" : "Schalte alle"
+							}
+						}
+					]
+				}, {
+					"id" : "switch_all_commands",
+					"type" : "dropdown",
+					"label" : {
+						"en" : "Send the following Switch All commands",
+						"nl" : "Stuur de volgende Switch All opdrachten",
+						"de" : "Senden den folgenden Switch All Befehle"
+					},
+					"value" : "1",
+					"hint" : {
+						"en" : "Send the following Switch All commands",
+						"nl" : "Stuur de volgende Switch All opdrachten",
+						"de" : "Senden den folgenden Switch All Befehle"
+					},
+					"values" : [{
+							"id" : "1",
+							"label" : {
+								"en" : "Switch off only",
+								"nl" : "Schakel enkel uit",
+								"de" : "Schalte nur aus"
+							}
+						}, {
+							"id" : "2",
+							"label" : {
+								"en" : "Switch on only",
+								"nl" : "Schakel enkel aan",
+								"de" : "Schalte nur ein"
+							}
+						}, {
+							"id" : "-1",
+							"label" : {
+								"en" : "Switch all on and off",
+								"nl" : "Schakel aan en uit",
+								"de" : "Schalte ein und aus"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
 }
