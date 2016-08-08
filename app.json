@@ -3,7 +3,7 @@
 	"name" : {
 		"en" : "Z-Wave.Me"
 	},
-	"version" : "0.0.2",
+	"version" : "0.0.3",
 	"compatibility" : ">=0.9.0",
 	"description" : {
 		"en" : "Z-Wave.Me devices for Homey",
@@ -24,6 +24,10 @@
 		    {
 			    "name" : "Bart Kockx",
 			    "email" : "bkockx@gmail.com"
+		    },
+			{
+			    "name" : "Robin van Kekem",
+			    "email" : "nl.inversion@gmail.com"
 		    }
 		]
 	},
@@ -466,6 +470,135 @@
 					]
 				}
 			]
-		}
+		},
+		{
+		    "id": "ZME_05461",
+		    "name": {
+			    "en": "Z-Wave.Me Channel 1",
+				"nl": "Z-Wave.Me Kanaal 1"
+		    },
+		    "class": "light",
+		    "capabilities": [ "onoff" ],
+		    "images": {
+			    "large": "/drivers/ZME_05461/assets/images/large.png",
+			    "small": "/drivers/ZME_05461/assets/images/small.png"
+		    },
+		    "zwave": {
+			    "manufacturerId": 277,
+			    "productTypeId": 4096,
+			    "productId": 256,
+			    "learnmode": {
+				    "image": "/drivers/ZME_05461/assets/learnmode.svg",
+				    "instruction": {
+					    "en": "Press three times one of the buttons",
+					    "nl": "Druk driemaal op de een van de knoppen"
+				    }
+				},
+			    "associationGroups": [ 1, 2, 3 ],
+				"defaultConfiguration": [
+					{
+						"id": "switch_first_channel_off_after",
+						"size": 2,
+						"value": 0
+					},
+					{
+						"id": "energy_consumption_first_channel",
+						"size": 2,
+						"value": 0
+					},
+					{
+						"id": "switch_second_channel_off_after",
+						"size": 2,
+						"value": 0
+					},
+					{
+						"id": "energy_consumption_second_channel",
+						"size": 2,
+						"value": 0
+					}
+				],
+				"multiChannelNodes": {
+				    "2": {
+					    "class": "light",
+					    "capabilities": [ "onoff" ],
+					    "icon": "/drivers/ZME_05461/assets/channel2.svg",
+					    "name": {
+						    "en": "Z-Wave.Me channel 2",
+							"nl": "Z-Wave.Me Kanaal 2"
+						}
+				    }
+				}
+		    },
+			"settings" : [
+				{
+					"id": "switch_first_channel_off_after",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 65535
+					},
+					"value": 0,
+					"label": {
+						"en": "Auto switch off first channel (s)",
+						"nl": "Auto uitschakelen eerste kanaal (s)"
+					},
+					"hint": {
+						"en": "If not zero, automatically first second channel off after a user defined time in seconds.",
+						"nl": "Indien niet nul, automatisch het eerste kanaal uitschakelen na de ingestelde tijd in seconden."
+					}
+				},
+				{
+					"id": "energy_consumption_first_channel",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 1800
+					},
+					"value": 0,
+					"label": {
+						"en": "Engergy consumption for first channel (w)",
+						"nl": "Energie verbruik voor tweede kanaal (w)"
+					},
+					"hint": {
+						"en": "Specify the consumption of the load in watts, for the calculation of power consumption. Max load 1800 W.",
+						"nl": "Geef het verbruik op in watt, voor het berekende energie verbruik. Maximaal 1800 W."
+					}
+				},
+				{
+					"id": "switch_second_channel_off_after",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 65535
+					},
+					"value": 0,
+					"label": {
+						"en": "Auto switch off first channel (s)",
+						"nl": "Auto uitschakelen tweede kanaal (s)"
+					},
+					"hint": {
+						"en": "If not zero, automatically switch second channel off after a user defined time in seconds",
+						"nl": "Indien niet nul, automatisch het tweede kanaal uitschakelen na de ingestelde tijd in seconden."
+					}
+				},
+				{
+					"id": "energy_consumption_second_channel",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 1800
+					},
+					"value": 0,
+					"label": {
+						"en": "Engergy consumption for second channel (w)",
+						"nl": "Energie verbruik voor tweede kanaal (w)"
+					},
+					"hint": {
+						"en": "Specify the consumption of the load in watts, for the calculation of power consumption. Max load 1800 W.",
+						"nl": "Geef het verbruik op in watt, voor het berekende energie verbruik. Maximaal 1800 W."
+					}
+				}
+			]
+	    }
 	]
 }
