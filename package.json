@@ -1,6 +1,6 @@
 {
   "name": "me.zwave",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This app adds support for Z-Wave.Me devices to Homey",
   "main": "app.js",
   "dependencies": {

@@ -472,23 +472,23 @@
 			]
 		},
 		{
-		    "id": "ZME_05461",
+		    "id": "05461",
 		    "name": {
-			    "en": "Z-Wave.Me Channel 1",
-				"nl": "Z-Wave.Me Kanaal 1"
+			    "en": "Z-Wave.Me Double Switch",
+				"nl": "Z-Wave.Me Dubbele Schakelaar"
 		    },
 		    "class": "light",
 		    "capabilities": [ "onoff" ],
 		    "images": {
-			    "large": "/drivers/ZME_05461/assets/images/large.png",
-			    "small": "/drivers/ZME_05461/assets/images/small.png"
+			    "large": "/drivers/05461/assets/images/large.png",
+			    "small": "/drivers/05461/assets/images/small.png"
 		    },
 		    "zwave": {
 			    "manufacturerId": 277,
 			    "productTypeId": 4096,
 			    "productId": 256,
 			    "learnmode": {
-				    "image": "/drivers/ZME_05461/assets/learnmode.svg",
+				    "image": "/drivers/05461/assets/learnmode.svg",
 				    "instruction": {
 					    "en": "Press three times one of the buttons",
 					    "nl": "Druk driemaal op de een van de knoppen"
@@ -521,7 +521,7 @@
 				    "2": {
 					    "class": "light",
 					    "capabilities": [ "onoff" ],
-					    "icon": "/drivers/ZME_05461/assets/channel2.svg",
+					    "icon": "/drivers/05461/assets/channel2.svg",
 					    "name": {
 						    "en": "Z-Wave.Me channel 2",
 							"nl": "Z-Wave.Me Kanaal 2"

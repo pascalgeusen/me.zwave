@@ -6,7 +6,7 @@ Note! I created this app to add support for one of my devices. Feel free to chan
 
 Currently supported devices:
 * 054336Z - http://www.pepper1.net/zwavedb/device/145
-* ZME_05461 - Robin van Kekem (nl.inversion@gmail.com)
+* 05461 - Robin van Kekem (nl.inversion@gmail.com)
 
 Currently supported languages:
 * English
@@ -16,12 +16,12 @@ Currently supported languages:
 Additional information:
 * Icons generated using: http://www.mobilefish.com/services/image2svg/image2svg.php
 * Original source is com.fibaro project (https://github.com/athombv/com.fibaro)
-* No power metering for the ZME_05461
+* No power metering for the 05461
 
 Changelog:
 
 0.0.3
-* Add initial support for the ZME_05461: Dual load switch
+* Add initial support for the 05461: Dual load switch
 
 0.0.2
 * Replaced a couple of icons, fixed a slider issue and removed the tinycolor2 package (since it's not used)
