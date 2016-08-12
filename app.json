@@ -32,21 +32,21 @@
 		]
 	},
 	"drivers" : [{
-			"id" : "054336Z",
+			"id" : "WCD1",
 			"name" : {
-				"en" : "Z-Wave.Me dimmer - 054336Z",
-				"nl" : "Z-Wave.Me dimmer - 054336Z",
-				"de" : "Z-Wave.Me dimmer - 054336Z"
+				"en" : "Z-Wave.Me dimmer - ZME_WCD1",
+				"nl" : "Z-Wave.Me dimmer - ZME_WCD1",
+				"de" : "Z-Wave.Me dimmer - ZME_WCD1"
 			},
 			"zwave" : {
 				"manufacturerId" : 277,
-				"productTypeId" : 4096,
-				"productId" : 2,
+				"productTypeId" : 256,
+				"productId" : 257,
 				"learnmode" : {
-					"image" : "/drivers/054336Z/assets/learnmode.svg",
+					"image" : "/drivers/WCD1/assets/learnmode.svg",
 					"instruction" : {
 						"en" : "Press the on or off button of the dimmer three times",
-						"nl" : "Druk driemaal op de aan of uit knop op de dimmer",
+						"nl" : "Hou alle 4 de knoppen 5 seconden ingedrukt en druk vervolgens op knop 1",
 						"de" : "Drücken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
 					}
 				},
